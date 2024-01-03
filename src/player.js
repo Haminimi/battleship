@@ -5,6 +5,14 @@ export class Player {
 		this.previousMoves = [];
 	}
 
+	humanMove(enemyGameboard, coordinates) {
+		const move = coordinates;
+		if (!this.previousMoves.includes(move)) {
+			enemyGameboard.receiveAttack(move);
+			this.previousMoves.push(move);
+		}
+	}
+
 	computerMove(enemyGameboard) {
 		const firstRandomNumber = Math.floor(Math.random() * (10 - 0));
 		const secondRandomNumber = Math.floor(Math.random() * (10 - 0));

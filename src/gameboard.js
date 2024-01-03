@@ -26,11 +26,17 @@ export class Gameboard {
 	}
 
 	receiveAttack(coordinates) {
-		if (this.coordinates[coordinates] !== true) {
-			const ship = this.coordinates[coordinates];
-			ship.hit();
+		if (this.missed.includes(coordinates)) {
+			return;
 		} else {
-			this.missed.push(coordinates);
+			if (this.coordinates[coordinates] !== true) {
+				const ship = this.coordinates[coordinates];
+				ship.hit();
+				console.log(ship);
+			} else {
+				this.missed.push(coordinates);
+				console.log(this.missed);
+			}
 		}
 	}
 
