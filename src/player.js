@@ -14,14 +14,15 @@ export class Player {
 	}
 
 	computerMove(enemyGameboard) {
-		const firstRandomNumber = Math.floor(Math.random() * (10 - 0));
-		const secondRandomNumber = Math.floor(Math.random() * (10 - 0));
+		const firstRandomNumber = Math.floor(Math.random() * 10);
+		const secondRandomNumber = Math.floor(Math.random() * 10);
 		const move = `${firstRandomNumber}, ${secondRandomNumber}`;
 		if (!this.previousMoves.includes(move)) {
 			enemyGameboard.receiveAttack(move);
 			this.previousMoves.push(move);
-		} else {
-			this.computerMove(enemyGameboard);
+			return move;
 		}
+
+		return this.computerMove(enemyGameboard);
 	}
 }
