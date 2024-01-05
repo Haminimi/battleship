@@ -30,3 +30,14 @@ const dragSecondShip = document.getElementById('drag-2');
 const dragThirdShip = document.getElementById('drag-3');
 const dragFourthShip = document.getElementById('drag-4');
 const dragFifthShip = document.getElementById('drag-5');
+
+function initialize() {
+	const gameboard = new Gameboard();
+	gameboard.initializeCoordinates();
+	const firstShip = new Ship(1);
+	const secondShip = new Ship(2);
+	const thirdShip = new Ship(3);
+	const fourthShip = new Ship(4);
+	const fifthShip = new Ship(5);
+	const humanPlayer = new Player('Human', gameboard);
+}
