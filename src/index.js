@@ -56,4 +56,16 @@ function initialize() {
 		fifthComputerShip
 	);
 	const computerPlayer = new Player('Computer', computerGameboard);
+
+	humanGrid.parentNode.removeChild(humanGrid);
+	humanGrid = document.createElement('div');
+	humanGrid.setAttribute('id', 'human-grid');
+	humanGrid.classList.add('grid');
+	humanGridContainer.appendChild(humanGrid);
+
+	computerGrid.parentNode.removeChild(computerGrid);
+	computerGrid = document.createElement('div');
+	computerGrid.setAttribute('id', 'computer-grid');
+	computerGrid.classList.add('grid');
+	computerGridContainer.appendChild(computerGrid);
 }
