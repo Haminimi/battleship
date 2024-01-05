@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 export class Ship {
 	constructor(length, numberOfHits = 0, sunk = false) {
 		this.length = length;
