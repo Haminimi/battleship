@@ -48,3 +48,34 @@ export function showComputerAttack(gameboard, humanGrid, move) {
 		}
 	}
 }
+
+export function showNextDragShip(
+	draggedShip,
+	shipLength,
+	secondDragShip,
+	thirdDragShip,
+	fourthDragShip,
+	fifthDragShip
+) {
+	switch (shipLength) {
+		case '1':
+			draggedShip.style.display = 'none';
+			secondDragShip.style.display = 'flex';
+			break;
+		case '2':
+			draggedShip.style.display = 'none';
+			thirdDragShip.style.display = 'flex';
+			break;
+		case '3':
+			draggedShip.style.display = 'none';
+			fourthDragShip.style.display = 'flex';
+			break;
+		case '4':
+			draggedShip.style.display = 'none';
+			fifthDragShip.style.display = 'flex';
+			break;
+		case '5':
+			draggedShip.style.display = 'none';
+			break;
+	}
+}
