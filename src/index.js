@@ -86,4 +86,9 @@ function initialize() {
 			humanGrid.appendChild(gridCell);
 		}
 	}
+
+	let computerCurrentScore = 0;
+	let humanCurrentScore = 0;
+	computerScore.textContent = `Computer: ${computerCurrentScore}`;
+	humanScore.textContent = `Human: ${humanCurrentScore}`;
 }
