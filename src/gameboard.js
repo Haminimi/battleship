@@ -32,10 +32,8 @@ export class Gameboard {
 			if (this.coordinates[coordinates] !== true) {
 				const ship = this.coordinates[coordinates];
 				ship.hit();
-				console.log(ship);
 			} else {
 				this.missed.push(coordinates);
-				console.log(this.missed);
 			}
 		}
 	}
