@@ -40,4 +40,20 @@ function initialize() {
 	const fourthShip = new Ship(4);
 	const fifthShip = new Ship(5);
 	const humanPlayer = new Player('Human', gameboard);
+
+	const computerGameboard = new Gameboard();
+	computerGameboard.initializeCoordinates();
+	const firstComputerShip = new Ship(1);
+	const secondComputerShip = new Ship(2);
+	const thirdComputerShip = new Ship(3);
+	const fourthComputerShip = new Ship(4);
+	const fifthComputerShip = new Ship(5);
+	computerGameboard.placeComputerShips(
+		firstComputerShip,
+		secondComputerShip,
+		thirdComputerShip,
+		fourthComputerShip,
+		fifthComputerShip
+	);
+	const computerPlayer = new Player('Computer', computerGameboard);
 }
