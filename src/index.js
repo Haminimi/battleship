@@ -91,4 +91,27 @@ function initialize() {
 	let humanCurrentScore = 0;
 	computerScore.textContent = `Computer: ${computerCurrentScore}`;
 	humanScore.textContent = `Human: ${humanCurrentScore}`;
+
+	function attack(event) {
+		if (!event.target.classList.contains('clicked')) {
+			event.target.classList.add('clicked');
+			humanPlayer.humanMove(
+				computerGameboard,
+				event.target.getAttribute('data-computer')
+			);
+
+			showAttack(computerGameboard, computerGrid, event);
+
+			if (computerGameboard.gameOver()) {
+				winner.textContent = "You're a winner 🥳";
+				humanScore.textContent = `Human: ${++humanCurrentScore}`;
+				modal.showModal();
+				modal.style.display = 'flex';
+			} else {
+				computerMove();
+			}
+		} else {
+			return;
+		}
+	}
 }
