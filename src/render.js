@@ -29,3 +29,22 @@ export function showAttack(computerGameboard, computerGrid, event) {
 		}
 	}
 }
+
+export function showComputerAttack(gameboard, humanGrid, move) {
+	const cell = humanGrid.querySelector(`[data-human='${move}']`);
+	cell.textContent = 'X';
+	if (gameboard.coordinates[cell.getAttribute('data-human')] === true) {
+		cell.style.backgroundColor = 'cornflowerblue';
+	} else {
+		cell.style.backgroundColor = '#FFA351';
+	}
+
+	const keys = Object.keys(gameboard.coordinates);
+	for (const key of keys) {
+		if (gameboard.coordinates[key].sunk === true) {
+			const cell = humanGrid.querySelector(`[data-human='${key}']`);
+			cell.style.backgroundColor = '#F96167';
+			cell.style.color = 'white';
+		}
+	}
+}
