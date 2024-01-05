@@ -68,4 +68,22 @@ function initialize() {
 	computerGrid.setAttribute('id', 'computer-grid');
 	computerGrid.classList.add('grid');
 	computerGridContainer.appendChild(computerGrid);
+
+	for (let i = 0; i < 10; i++) {
+		for (let j = 0; j < 10; j++) {
+			const gridCell = document.createElement('div');
+			gridCell.classList.add('computer-grid-cell');
+			gridCell.setAttribute('data-computer', `${i}, ${j}`);
+			computerGrid.appendChild(gridCell);
+		}
+	}
+
+	for (let i = 0; i < 10; i++) {
+		for (let j = 0; j < 10; j++) {
+			const gridCell = document.createElement('div');
+			gridCell.classList.add('human-grid-cell');
+			gridCell.setAttribute('data-human', `${i}, ${j}`);
+			humanGrid.appendChild(gridCell);
+		}
+	}
 }
