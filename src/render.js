@@ -55,7 +55,8 @@ export function showNextDragShip(
 	secondDragShip,
 	thirdDragShip,
 	fourthDragShip,
-	fifthDragShip
+	fifthDragShip,
+	shipsContainer
 ) {
 	switch (shipLength) {
 		case '1':
@@ -76,6 +77,7 @@ export function showNextDragShip(
 			break;
 		case '5':
 			draggedShip.style.display = 'none';
+			shipsContainer.style.borderColor = 'mediumseagreen';
 			break;
 	}
 }

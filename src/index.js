@@ -20,6 +20,7 @@ const replayButton = document.getElementById('replay-button');
 const humanScore = document.getElementById('human-score');
 const computerScore = document.getElementById('computer-score');
 const ships = document.querySelectorAll('.ship');
+const shipsContainer = document.getElementById('ships');
 const firstDragShip = document.getElementById('ship-1');
 const secondDragShip = document.getElementById('ship-2');
 const thirdDragShip = document.getElementById('ship-3');
@@ -195,7 +196,8 @@ function initialize() {
 						secondDragShip,
 						thirdDragShip,
 						fourthDragShip,
-						fifthDragShip
+						fifthDragShip,
+						shipsContainer
 					);
 
 					if (shipLength === '5') {
@@ -251,6 +253,7 @@ replayButton.addEventListener('click', () => {
 	firstDragShip.style.display = 'flex';
 	modal.close();
 	modal.style.display = 'none';
+	shipsContainer.style.borderColor = 'black';
 	initialize();
 });
 
