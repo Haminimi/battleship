@@ -31,6 +31,9 @@ const dragThirdShip = document.getElementById('drag-3');
 const dragFourthShip = document.getElementById('drag-4');
 const dragFifthShip = document.getElementById('drag-5');
 
+let computerCurrentScore = 0;
+let humanCurrentScore = 0;
+
 function initialize() {
 	const gameboard = new Gameboard();
 	gameboard.initializeCoordinates();
@@ -87,8 +90,6 @@ function initialize() {
 		}
 	}
 
-	let computerCurrentScore = 0;
-	let humanCurrentScore = 0;
 	computerScore.textContent = `Computer: ${computerCurrentScore}`;
 	humanScore.textContent = `Human: ${humanCurrentScore}`;
 
@@ -243,3 +244,12 @@ function initialize() {
 	}
 	window.cheat = cheat;
 }
+
+initialize();
+
+replayButton.addEventListener('click', () => {
+	firstDragShip.style.display = 'flex';
+	modal.close();
+	modal.style.display = 'none';
+	initialize();
+});
