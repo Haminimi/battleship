@@ -1,13 +1,6 @@
-/* eslint-disable */
-
-import { sum } from './index';
 import { Ship } from './ship';
 import { Gameboard } from './gameboard';
 import { Player } from './player';
-
-test('sum', () => {
-	expect(sum(1, 2)).toBe(3);
-});
 
 test('Ship', () => {
 	const ship = new Ship(5);
@@ -39,6 +32,26 @@ test('Gameboard', () => {
 	expect(gameboard.gameOver()).toBeTruthy();
 });
 
+test('Computer gameboard', () => {
+	const computerGameboard = new Gameboard();
+	computerGameboard.initializeCoordinates();
+	const firstShip = new Ship(1);
+	const secondShip = new Ship(2);
+	const thirdShip = new Ship(3);
+	const fourthShip = new Ship(4);
+	const fifthShip = new Ship(5);
+	const randomCoordinates = computerGameboard.generateRandomCoordinates(1);
+	expect(randomCoordinates.length).toBe(1);
+	computerGameboard.placeComputerShips(
+		firstShip,
+		secondShip,
+		thirdShip,
+		fourthShip,
+		fifthShip
+	);
+	expect(computerGameboard.ships.length).toBe(5);
+});
+
 test('Player', () => {
 	const gameboard = new Gameboard();
 	const enemyGameboard = new Gameboard();
@@ -56,10 +69,14 @@ test('Player', () => {
 		'0, 3',
 		'0, 4',
 	]);
+
 	expect(player.gameboard).toBe(gameboard);
 	expect(player.gameboard.coordinates['0, 0']).toBe(ship);
+	player.humanMove(enemyGameboard, '0, 0');
+	expect(player.previousMoves.length).toBe(1);
+
 	expect(computer.name).toBe('computer');
 	expect(computer.previousMoves.length).toBe(0);
-	computer.computerMove(enemyGameboard);
+	computer.computerMove(gameboard);
 	expect(computer.previousMoves.length).toBe(1);
 });
