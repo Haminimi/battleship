@@ -253,3 +253,39 @@ replayButton.addEventListener('click', () => {
 	modal.style.display = 'none';
 	initialize();
 });
+
+//Add event listeners for drag ships
+dragFirstShip.addEventListener('mousedown', () => {
+	firstDragShip.setAttribute('draggable', 'true');
+});
+firstDragShip.addEventListener('dragend', () => {
+	firstDragShip.setAttribute('draggable', 'false');
+});
+
+dragSecondShip.addEventListener('mousedown', () => {
+	secondDragShip.setAttribute('draggable', 'true');
+});
+secondDragShip.addEventListener('dragend', () => {
+	secondDragShip.setAttribute('draggable', 'false');
+});
+
+dragThirdShip.addEventListener('mousedown', () => {
+	thirdDragShip.setAttribute('draggable', 'true');
+});
+thirdDragShip.addEventListener('dragend', () => {
+	thirdDragShip.setAttribute('draggable', 'false');
+});
+
+dragFourthShip.addEventListener('mousedown', () => {
+	fourthDragShip.setAttribute('draggable', 'true');
+});
+fourthDragShip.addEventListener('dragend', () => {
+	fourthDragShip.setAttribute('draggable', 'false');
+});
+
+dragFifthShip.addEventListener('mousedown', () => {
+	fifthDragShip.setAttribute('draggable', 'true');
+});
+fifthDragShip.addEventListener('dragend', () => {
+	fifthDragShip.setAttribute('draggable', 'false');
+});
