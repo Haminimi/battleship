@@ -214,4 +214,17 @@ function initialize() {
 			}
 		}
 	}
+
+	function computerMove() {
+		const move = computerPlayer.computerMove(gameboard);
+
+		showComputerAttack(gameboard, humanGrid, move);
+
+		if (gameboard.gameOver()) {
+			winner.textContent = 'Computer is a winner 😭';
+			computerScore.textContent = `Computer: ${++computerCurrentScore}`;
+			modal.showModal();
+			modal.style.display = 'flex';
+		}
+	}
 }
