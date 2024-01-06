@@ -148,3 +148,44 @@ header {
 	justify-content: space-evenly;
 	align-items: center;
 }
+
+.ship {
+	height: 40px;
+	background-color: mediumseagreen;
+	border: 2px solid dimgray;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	display: none;
+}
+
+#ship-1 {
+	width: 40px;
+	display: flex;
+}
+
+#ship-2 {
+	width: 80px;
+}
+
+#ship-3 {
+	width: 120px;
+}
+
+#ship-4 {
+	width: 160px;
+}
+
+#ship-5 {
+	width: 200px;
+}
+
+.drag {
+	cursor: grab;
+	color: dimgray;
+	user-select: none;
+}
+
+.drag:hover {
+	color: #101820;
+}
