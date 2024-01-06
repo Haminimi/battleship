@@ -227,4 +227,19 @@ function initialize() {
 			modal.style.display = 'flex';
 		}
 	}
+
+	//Cheat 🫣
+	function cheat() {
+		const computerCoordinates = Object.keys(gameboard.coordinates);
+		computerCoordinates.forEach((coordinate) => {
+			if (computerGameboard.coordinates[coordinate] !== true) {
+				const cell = computerGrid.querySelector(
+					`[data-computer='${coordinate}']`
+				);
+				cell.style.backgroundColor = 'mediumseagreen';
+			}
+		});
+		return 'You are cheating 🫣';
+	}
+	window.cheat = cheat;
 }
