@@ -254,7 +254,7 @@ replayButton.addEventListener('click', () => {
 	initialize();
 });
 
-//Add event listeners for drag ships
+//Add event listeners for dragging
 dragFirstShip.addEventListener('mousedown', () => {
 	firstDragShip.setAttribute('draggable', 'true');
 });
@@ -288,4 +288,23 @@ dragFifthShip.addEventListener('mousedown', () => {
 });
 fifthDragShip.addEventListener('dragend', () => {
 	fifthDragShip.setAttribute('draggable', 'false');
+});
+
+//Rotate a ship on a click
+ships.forEach((ship) => {
+	ship.addEventListener('click', () => {
+		const height = ship.offsetHeight;
+		const width = ship.offsetWidth;
+		ship.style.width = `${height}px`;
+		ship.style.height = `${width}px`;
+		if (ship.classList.contains('horizontal')) {
+			ship.classList.remove('horizontal');
+			ship.classList.add('vertical');
+			ship.style.flexDirection = 'column';
+		} else {
+			ship.classList.remove('vertical');
+			ship.classList.add('horizontal');
+			ship.style.flexDirection = 'row';
+		}
+	});
 });
