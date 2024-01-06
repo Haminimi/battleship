@@ -189,3 +189,37 @@ header {
 .drag:hover {
 	color: #101820;
 }
+
+#modal {
+	height: 50%;
+	width: 50%;
+	align-items: center;
+	justify-content: space-evenly;
+	font-size: 22px;
+	border-radius: 10px;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+#replay-button {
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #101820;
+	cursor: pointer;
+	font-size: 20px;
+	padding: 5px 30px;
+}
+
+#winner {
+	font-size: 30px;
+}
+
+#game-over {
+	font-size: 40px;
+	line-height: 30px;
+}
