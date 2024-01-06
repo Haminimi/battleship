@@ -114,4 +114,104 @@ function initialize() {
 			return;
 		}
 	}
+
+	//Drag functionality
+	let draggedShip = null;
+
+	ships.forEach((ship) => {
+		ship.addEventListener('dragstart', handleDragStart);
+	});
+	humanGrid.addEventListener('dragover', handleDragOver);
+	humanGrid.addEventListener('drop', handleDrop);
+
+	function handleDragStart(event) {
+		draggedShip = event.target;
+		event.dataTransfer.setData(
+			'text/plain',
+			draggedShip.getAttribute('data-length')
+		);
+	}
+
+	function handleDragOver(event) {
+		event.preventDefault();
+	}
+
+	function handleDrop(event) {
+		event.preventDefault();
+
+		if (draggedShip) {
+			const shipLength = draggedShip.getAttribute('data-length');
+			const cell = document.elementFromPoint(
+				event.clientX,
+				event.clientY
+			);
+			const coordinate = cell.getAttribute('data-human');
+
+			if (coordinate) {
+				const [row, col] = coordinate.split(',').map(Number);
+				const shipCoordinates = [];
+				shipCoordinates.push(`${row}, ${col}`);
+				if (draggedShip.classList.contains('horizontal')) {
+					for (let i = 1; i < shipLength; i++) {
+						shipCoordinates.push(`${row}, ${col + i}`);
+					}
+				} else {
+					for (let i = 1; i < shipLength; i++) {
+						shipCoordinates.push(`${row + i}, ${col}`);
+					}
+				}
+
+				let ship = null;
+				switch (shipLength) {
+					case '1':
+						ship = firstShip;
+						break;
+					case '2':
+						ship = secondShip;
+						break;
+					case '3':
+						ship = thirdShip;
+						break;
+					case '4':
+						ship = fourthShip;
+						break;
+					case '5':
+						ship = fifthShip;
+						break;
+				}
+
+				if (
+					shipCoordinates.every(
+						(coordinate) =>
+							gameboard.coordinates[coordinate] === true
+					)
+				) {
+					gameboard.placeShip(ship, shipCoordinates);
+					render(gameboard, humanGrid);
+					showNextDragShip(
+						draggedShip,
+						shipLength,
+						secondDragShip,
+						thirdDragShip,
+						fourthDragShip,
+						fifthDragShip
+					);
+
+					if (shipLength === '5') {
+						const computerGridCells = document.querySelectorAll(
+							'.computer-grid-cell'
+						);
+						computerGridCells.forEach((cell) => {
+							cell.style.cursor = 'pointer';
+							cell.addEventListener('click', (event) => {
+								attack(event);
+							});
+						});
+					}
+
+					draggedShip = null;
+				}
+			}
+		}
+	}
 }
