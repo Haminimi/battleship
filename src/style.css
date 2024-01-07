@@ -204,16 +204,22 @@ header {
 #modal {
 	height: 50%;
 	width: 50%;
-	align-items: center;
-	justify-content: space-evenly;
 	font-size: 22px;
 	border-radius: 10px;
-	flex-direction: column;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: rgba(255, 255, 255, 0.85);
+}
+
+#modal-content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
 }
 
 #replay-button {

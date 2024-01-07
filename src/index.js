@@ -108,7 +108,6 @@ function initialize() {
 				winner.textContent = "You're a winner 🥳";
 				humanScore.textContent = `Human: ${++humanCurrentScore}`;
 				modal.showModal();
-				modal.style.display = 'flex';
 			} else {
 				computerMove();
 			}
@@ -227,7 +226,6 @@ function initialize() {
 			winner.textContent = 'Computer is a winner 😭';
 			computerScore.textContent = `Computer: ${++computerCurrentScore}`;
 			modal.showModal();
-			modal.style.display = 'flex';
 		}
 	}
 
@@ -250,10 +248,9 @@ function initialize() {
 initialize();
 
 replayButton.addEventListener('click', () => {
+	shipsContainer.style.borderColor = 'black';
 	firstDragShip.style.display = 'flex';
 	modal.close();
-	modal.style.display = 'none';
-	shipsContainer.style.borderColor = 'black';
 	initialize();
 });
 
