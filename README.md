@@ -1,4 +1,5 @@
 # Battleship 🚢
+![Screenshot of the Battleship game.](/screenshot.png)
 ## Description
 [Battleship](https://en.wikipedia.org/wiki/Battleship_(game)) is a strategy type guessing game for two players. It is played on ruled grids on which each player's fleet of warships are marked. The locations of the fleets are concealed from the other player. Players alternate turns calling "shots" at the other player's ships, and the objective of the game is to destroy the opposing player's fleet. [The project](https://www.theodinproject.com/lessons/node-path-javascript-battleship) is a part of [The Odin Project](https://www.theodinproject.com/dashboard)'s curriculum. The Odin Project provides a high quality web development education maintained by an open source community.
 ## Live Preview
@@ -15,13 +16,13 @@ cheat()
 ## Tech
 **The project is built with:**
 - HTML
-- Vanilla CSS
 - Vanilla JavaScript
+- Vanilla CSS
 
 **Tools**
+- Visual Studio Code
 - Git
 - Jest
-- Visual Studio Code
 ## Covered Topics
 **This section mentions the main topics covered during project work and prior lessons**
 - Test Driven Development
@@ -37,5 +38,4 @@ The computer opponent at the moment is not particularly powerful, and that's the
 - [Exercism](https://exercism.org/profiles/Haminimi)
 - [LeetCode](https://leetcode.com/Haminimi/)
 - Email: haminimi.dev@gmail.com
-- LinkedIn: A profile will be available at the time I am job ready
 ## Happy coding!
