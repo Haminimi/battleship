@@ -33,9 +33,4 @@ cheat()
 The computer opponent at the moment is not particularly powerful, and that's the main thing on a to do list for this project. The intelligence of the computer player should be improved by having it try adjacent slots after getting a ‘hit’.
 ## Credits
 - Icon used for the favicon image is one of the [Battleship icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/battleship).
-## Author
-- [GitHub](https://github.com/Haminimi)
-- [Exercism](https://exercism.org/profiles/Haminimi)
-- [LeetCode](https://leetcode.com/Haminimi/)
-- Email: haminimi.dev@gmail.com
 ## Happy coding!
