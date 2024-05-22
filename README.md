@@ -2,8 +2,8 @@
 ![Screenshot of the Battleship game.](/screenshot.png)
 ## Description
 [Battleship](https://en.wikipedia.org/wiki/Battleship_(game)) is a strategy type guessing game for two players. It is played on ruled grids on which each player's fleet of warships are marked. The locations of the fleets are concealed from the other player. Players alternate turns calling "shots" at the other player's ships, and the objective of the game is to destroy the opposing player's fleet. [The project](https://www.theodinproject.com/lessons/node-path-javascript-battleship) is a part of [The Odin Project](https://www.theodinproject.com/dashboard)'s curriculum. The Odin Project provides a high quality web development education maintained by an open source community.
-## Live Preview
-[The Battleship game](https://haminimi.github.io/battleship/). If you're interested in achieving a fast victory, try using the cheat function in your developer console:
+## [Live Preview](https://haminimi.github.io/battleship/)
+If you're interested in achieving a fast victory, try using the cheat function in your developer console:
 ```javascript
 cheat()
 ```
